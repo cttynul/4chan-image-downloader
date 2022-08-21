@@ -38,7 +38,7 @@ def with_API(url):
             try: theard_title = data["posts"][0]["sub"]
             except: theard_title = data["posts"][0]["com"] 
             if "filename" in post: downloader(url="//is2.4chan.org/" + splitted[-3] + "/" + str(post["tim"]) + post["ext"], thread_title=theard_title, filename=post["filename"] + post["ext"])
-        else: print("Something Happen! No verbosity here.")
+        except: print("Something Happen! No verbosity here.")
 
 def exit_and_print(name):
     print(name + " -u|--url <thread_url> [-a|--api <default=y|nope>]")
